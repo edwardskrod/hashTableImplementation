@@ -1,0 +1,52 @@
+
+   Development log: Assignment 5
+   Name: Edward J Skrod
+
+Overview of:
+Hash Function
+	The first part of the assignment requires that we write a hash function to use with unordered_set.  I named a struct PlayHasher and overloaded the parenthesis operator.   First I create a key by combining the strings Offense and Defense.   So MIA and ATL would look like "MIAATL".   Hashing this value alone (with a character to ASCII value hash) will give me 1024 unique integer values because there are 32 NFL teams.  To ensure that I had even more unique values, I added the down and yards to go.  Finally, I hashed the entire description string and added it to the value of hash.  The result was a very large unsigned integer.
+
+Data Structure
+	For a data structure, I chose to use a vector of pointers to Lists of Plays.   The key is with the number of buckets.   Knowing that the list function will only need to calculate relevance for similar plays, I designed the hash and table to accommodate unique combinations of the Offense and Down.   This gave me 128 unique Lists of plays.   I hard code the Table Size in the constructor.  My hash function has been designed to assign a bucket in the hash table to each Offensive Team.   Buckets are assigned in multiples of 4.  So  ARI is equal to 0 and ATL is equal to 4.   Then, I add the down number to the index.  So ARI in down 1 would be 1, ATL in down 2 would be assigned 6.     
+	The constructor takes the current table size, n, and dynamically instantiates n Lists, using the vector push_back function to store their memory addresses.  To insert into the table, one need only go to the bucket and then call push_back, theLists[0]->push_back(tempPlay);
+
+
+Log:
+
+Nov 13:
+
+       Started to work on HashTable.cpp for the part of the assignment that calls for us to make our own data structure.  My strategy  is to make a vector of pointers to doubly-linked Lists.   There will be 132 unique hash values which  correspond to the team's offense and the down.   This will organize lists in terms of their offense and down.   
+	When I search for a "similar" play based upon the Offense Name, Down, Yards to Go and Yardline, I will automatically  go to the List which contains the same Offense Name and Down.    The hash table needs to be of size 133.  32 x 4 is 128. 
+ 	Given that the last team will be assigned hash = 128, I need 4 more slots to accommodate the downs, 129 - 132.  A table of  size 133 ensures a list at position 132.
+	The MyHash portion of the assignment is giving me trouble.  I can't seem to conceptualize how to use unordered_set.  I plan  to attend recitation on Friday and should have a better idea of how to implement it.
+
+
+Nov 16
+	The recitation on Friday cleared some things up for me.
+	Started work on the MyHash unordered_set and MyHash functor which I call PlayHasher().  I provide a hash for unordered_set by taking the Offense Name + Defense Name and running them through a mathematical formula.  I add the integer value of the play description as well.   
+
+	I developed the method to store the data in the unordered_set.  I had to overload the equality operator so  unordered_set can compare whether a Play is already in the list.   I compared based upon Description and Yards To Go.   I could just always return the operator False, given that no two plays will be alike.
+
+	Developed the list function to work with unordered_set. 
+
+Nov 17
+
+	Began work on my data structure.  I plan to use a vector of size 133 to store pointers to Lists.  These Lists will be categorized by Offense and Down.    For example, ATL will be assigned bucket 0 + down.   This will allow the list() function  to search (roughly) 1/128th the size of the data. I can use a push_back function on each List to insert the data.  This will keep the data organized so that the sort function works properly. (i.e. when relevance is tied, the first Play inserted in the list comes before the other Play.)
+	
+	List function:  Created a member function, handleList() which assigns relevance for each Similar Play.  It takes a Key to the  appropriate List as a parameter.
+
+	Implemented Prof. Srinivasan's method of calculating time.  Created variables to store the MIN, MAX and MEAN.  
+
+	Started work on printing them at the same time.  I will have to create two temporary vectors to store the data OUTSIDE of each of the list functions and pass them by reference to list().  This way I can print both of them at the same time when I iterate from 1 - numOfPlaysToPrint times.
+
+Nov 20
+	Print functionality has been added but now I noticed that I have a problem with the way in which the sort function determines which Play goes first given equal relevances.  Unordered_sort puts Plays into a key, value list (conceptually) .  When I iterate through the list to sort the relevant plays, Plays that are read later can sometimes appear prior to the earlier-read Plays.   This is causing the output to differ from HashTable (where Plays are stored in a List in the order in which they were read).
+
+	I had to create a new variable in the Play that will store the order number that the Play was read into the unordered_set.   The first play to be read will be assigned 0, the 2nd a 1, etc.    Now, when I sort, I can add the second expression that compares the order read.
+
+	At this point, development is finished.  I could turn the file in, as is, and probably receive a good grade.  However, since I have another week left before the program is due, I would like to look into optimizing the program for faster run time.
+
+Nov 24:  Changed Sort Function to account for equal relevance.   
+
+Nov 24:  Program is finished.  It is pretty fast, even without OpenMP.   see testing.txt for more information on time.
+

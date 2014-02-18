@@ -1,0 +1,215 @@
+	Edward J Skrod
+	Project 5, testing.txt
+	COP4530, Fall2013
+
+Nov 20:
+
+I tested this project using the input / output from Prov. Srinivasan's Proj 1 directory.   
+
+File: 2007.csv
+Commands (from input2):   list 90 46 NYG DAL 1 10 58
+
+Expected (I only included the first 20 from Srinivasan's file, output2):
+Run to the middle 43 NYG DAL 1 10 58 95
+Short pass right 50 NYG DAL 1 10 56 91.3333
+Run to the right 43 NYG DAL 1 10 62 91
+Short pass right 41 NYG DAL 1 10 60 89.6667
+Deep pass right 51 NYG DAL 1 10 53 86.6667
+Deep pass middle 58 NYG DAL 1 10 60 78
+Deep pass middle 58 NYG DAL 1 10 62 76
+Run to the left 29 NYG DAL 1 10 53 66.6667
+Run to the left 24 NYG DAL 1 10 60 61.3333
+Run to the middle 16 NYG DAL 1 10 59 49
+Run to the middle 11 NYG DAL 1 10 59 40.6667
+Run to the right 46 NYG PHI 1 10 58 -0
+Run to the right 45 NYG CHI 1 10 57 -2.66667
+Short pass left 47 NYG GB 1 10 60 -3.66667
+Run to the left 44 NYG GB 1 10 57 -4.33333
+Run to the middle 44 NYG NE 1 10 60 -5.33333
+Run to the left 47 NYG WAS 1 10 63 -6.66667
+Run to the left 50 NYG DET 1 10 57 -7.66667
+Run to the left 51 NYG SF 1 10 58 -8.33333
+Short pass right 44 NYG TB 1 10 53 -8.33333
+	
+Actual:
+Run to the middle 43 NYG DAL 1 10 58  95
+Run to the middle 43 NYG DAL 1 10 58  95
+
+Short pass right 50 NYG DAL 1 10 56  91.3333
+Short pass right 50 NYG DAL 1 10 56  91.3333
+
+Run to the right 43 NYG DAL 1 10 62  91
+Run to the right 43 NYG DAL 1 10 62  91
+
+Short pass right 41 NYG DAL 1 10 60  89.6667
+Short pass right 41 NYG DAL 1 10 60  89.6667
+
+Deep pass right 51 NYG DAL 1 10 53  86.6667
+Deep pass right 51 NYG DAL 1 10 53  86.6667
+
+Deep pass middle 58 NYG DAL 1 10 60  78
+Deep pass middle 58 NYG DAL 1 10 60  78
+
+Deep pass middle 58 NYG DAL 1 10 62  76
+Deep pass middle 58 NYG DAL 1 10 62  76
+
+Run to the left 29 NYG DAL 1 10 53  66.6667
+Run to the left 29 NYG DAL 1 10 53  66.6667
+
+Run to the left 24 NYG DAL 1 10 60  61.3333
+Run to the left 24 NYG DAL 1 10 60  61.3333
+
+Run to the middle 16 NYG DAL 1 10 59  49
+Run to the middle 16 NYG DAL 1 10 59  49
+
+Run to the middle 11 NYG DAL 1 10 59  40.6667
+Run to the middle 11 NYG DAL 1 10 59  40.6667
+
+Run to the right 46 NYG PHI 1 10 58  -0
+Run to the right 46 NYG PHI 1 10 58  -0
+
+Run to the right 45 NYG CHI 1 10 57  -2.66667
+Run to the right 45 NYG CHI 1 10 57  -2.66667
+
+Short pass left 47 NYG GB 1 10 60  -3.66667
+Short pass left 47 NYG GB 1 10 60  -3.66667
+
+Run to the left 44 NYG GB 1 10 57  -4.33333
+Run to the left 44 NYG GB 1 10 57  -4.33333
+
+Run to the middle 44 NYG NE 1 10 60  -5.33333
+Run to the middle 44 NYG NE 1 10 60  -5.33333
+
+Run to the left 47 NYG WAS 1 10 63  -6.66667
+Run to the left 47 NYG WAS 1 10 63  -6.66667
+
+Run to the left 50 NYG DET 1 10 57  -7.66667
+Run to the left 50 NYG DET 1 10 57  -7.66667
+
+Run to the left 51 NYG SF 1 10 58  -8.33333
+Run to the left 51 NYG SF 1 10 58  -8.33333
+
+Short pass right 44 NYG TB 1 10 53  -8.33333
+Short pass right 44 NYG TB 1 10 53  -8.33333
+
+
+Command:  list 100 46 NYG DAL 1 10 58 (from Input3)
+Expected (the first 10 from Output3):
+
+Run to the middle 43 NYG DAL 1 10 58 95
+Short pass right 50 NYG DAL 1 10 56 91.3333
+Run to the right 43 NYG DAL 1 10 62 91
+Short pass right 41 NYG DAL 1 10 60 89.6667
+Deep pass right 51 NYG DAL 1 10 53 86.6667
+Deep pass middle 58 NYG DAL 1 10 60 78
+Deep pass middle 58 NYG DAL 1 10 62 76
+Run to the left 29 NYG DAL 1 10 53 66.6667
+Run to the left 24 NYG DAL 1 10 60 61.3333
+Run to the middle 16 NYG DAL 1 10 59 49
+
+Actual:
+
+Run to the middle 43 NYG DAL 1 10 58  95
+Run to the middle 43 NYG DAL 1 10 58  95
+
+Short pass right 50 NYG DAL 1 10 56  91.3333
+Short pass right 50 NYG DAL 1 10 56  91.3333
+
+Run to the right 43 NYG DAL 1 10 62  91
+Run to the right 43 NYG DAL 1 10 62  91
+
+Short pass right 41 NYG DAL 1 10 60  89.6667
+Short pass right 41 NYG DAL 1 10 60  89.6667
+
+Deep pass right 51 NYG DAL 1 10 53  86.6667
+Deep pass right 51 NYG DAL 1 10 53  86.6667
+
+Deep pass middle 58 NYG DAL 1 10 60  78
+Deep pass middle 58 NYG DAL 1 10 60  78
+
+Deep pass middle 58 NYG DAL 1 10 62  76
+Deep pass middle 58 NYG DAL 1 10 62  76
+
+Run to the left 29 NYG DAL 1 10 53  66.6667
+Run to the left 29 NYG DAL 1 10 53  66.6667
+
+Run to the left 24 NYG DAL 1 10 60  61.3333
+Run to the left 24 NYG DAL 1 10 60  61.3333
+
+Run to the middle 16 NYG DAL 1 10 59  49
+Run to the middle 16 NYG DAL 1 10 59  49
+
+In addition to these two tests, I tested the program with the following years / commands:
+
+./Analyze 2007 2008 2009 2010 
+list 5 46 NYG DAL 1 10 58
+list 1 47 NYG DAL 1 10 58
+x
+
+./Analyze 2007 2009 2012 
+list 5 46 NYG DAL 1 10 58
+list 1 47 NYG DAL 1 10 58
+x
+
+
+
+
+Nov 21:
+	Speed Test:  Bubble Sort vs Merge Sort
+
+Bubble Sort:   
+Command:  ./Analyze 2007  
+list 90 46 NYG DAL 1 10 58 
+( called the function 5 times)
+myhash: store 0.4277 s, list: min 0.0178 s, max 0.0183 s, mean 0.0182 s
+mydatastructure: store 0.2789 s, list: min 0.0003 s, max 0.0008 s, mean 0.0007 s
+
+
+Merge Sort
+myhash: store 0.4349 s, list: min 0.0180 s, max 0.0199 s, mean 0.0186 s
+mydatastructure: store 0.2871 s, list: min 0.0009 s, max 0.0010 s, mean 0.0010 s
+
+This is unexpected.  However, I recall the Prof telling us that Bubblesort will sort faster for smaller datasets
+
+Test a larger data set
+
+Bubble Sort
+./Analyze 2007 2008 2009 2010 2011 2012
+
+list 90 46 NYG DAL 1 10 58
+myhash: store 2.1692 s, list: min 0.0964 s, max 0.0977 s, mean 0.0973 s
+mydatastructure: store 0.2830 s, list: min 0.0057 s, max 0.0058 s, mean 0.0057 s
+
+MergeSort
+myhash: store 2.4948 s, list: min 0.1175 s, max 0.1196 s, mean 0.1186 s
+mydatastructure: store 0.2858 s, list: min 0.0056 s, max 0.0057 s, mean 0.0056 s
+
+
+MergeSort is just marginally faster with the larger data set.
+
+What I find particularly interesting is that the time it took to store the data remained relatively constant even though the dataset was increased by a factor of 5.
+
+
+Test:  Program 1 solution
+./Analyze 2007 2008 2009 2010 2011 2012
+list 90 46 NYG DAL 1 10 58  x 5
+
+Benchmark:  store  2.15242   list 0.05158 s, max 0.053847 s, mean 0.052703 s
+
+Test:  my hash unordered_set and mydatastructure
+myhash: store 1.9318 s, list: min 0.0750 s, max 0.0772 s, mean 0.0759 s
+mydatastructure: store 1.5763 s, list: min 0.0026 s, max 0.0027 s, mean 0.0026 s
+
+Nov 24:
+	   While testing against the benchmark, I noticed that some of my plays were being output in a different order.  This made me go back to the Proj5 assignment and I noticed it said:
+"The plays are output in decreasing order of relevance (that is, most relevant play first). If multiple plays have the same relevance value, then the one that occured in a later year is considered more relevant. If both plays ocurred in the same year, then the one that occured later in the file is considered more relevant."
+
+I created a new test file, 2002.csv and changed my sort algorithm to account for the different cases.
+
+
+Nov 24:   
+	Program works correctly and outperforms the benchmark in all categories.
+
+
+
+
